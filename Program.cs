@@ -14,6 +14,8 @@ builder.Services.AddDbContext<WaterProjectContext>(options =>
 
 builder.Services.AddScoped<IWaterRepository, EFWaterRepository>();
 
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,5 +38,7 @@ app.MapControllerRoute("projectType", "{projectType}", new { Controller = "Home"
 app.MapControllerRoute("pagination", "{PageNum}", new {Controller = "Home", action = "Index", pageNum = 1});
 
 app.MapDefaultControllerRoute();
+
+app.MapRazorPages();
 
 app.Run();
