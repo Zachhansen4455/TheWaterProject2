@@ -16,24 +16,27 @@ namespace TheWaterProject2.Controllers
 
         //dont name it page. name var pageNum
         // this is used for pagination. doing 5 records per page
-        public IActionResult Index(int pageNum)
+        public IActionResult Index(int pageNum,string? projectType)
         {
 
-            int pageSize = 3;
+            int pageSize = 2;
 
             var blah = new ProjectsListViewModel
             {
                 Projects = _repo.Projects
-                .OrderBy(x => x.ProjectName)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize),
+                    .Where(x => x.ProjectType == projectType || projectType == null)
+                    .OrderBy(x => x.ProjectName)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
 
                 PaginationInfo = new PaginationInfo
                 {
                     CurrentPage = pageNum,
                     ItemsPerPage = pageSize,
-                    TotalItems = _repo.Projects.Count()
-                }
+                    TotalItems = projectType == null ? _repo.Projects.Count() : _repo.Projects.Where(x => x.ProjectType == projectType).Count()
+                },
+                
+                CurrentProjectType = projectType
             };
 
             return View(blah);
