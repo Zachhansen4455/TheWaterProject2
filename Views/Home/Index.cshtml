@@ -8,19 +8,13 @@
 
     
     @foreach (Project p in Model.Projects)
-    {                                        
-        <h3>@p.ProjectName</h3>
+    {      
+       <partial name="ProjectSummary" model="p" />
         
-        <ul>
-            <li>Project Type: @p.ProjectType</li>
-            <li>Program: @p.ProgramName</li>
-            <li>Impact: @p.ProjectImpact</li>
-            <li>Installation: @p.ProjectInstallation</li>
-            <li>Phase: @p.ProjectPhase</li>
-        </ul>
     }
 
-<div page-model="@Model.PaginationInfo" page-action="Index"></div>
+<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" 
+    page-class-normal="btn-outline-dark" page-class-selection="btn-primary" class="btn-group pull-right m-1"></div>
 
 
 @*     Links to navigate through the pages.

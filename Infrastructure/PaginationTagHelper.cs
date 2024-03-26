@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using TheWaterProject2.Models.ViewModels;
 
 namespace TheWaterProject2.Infrastructure
@@ -21,6 +23,10 @@ namespace TheWaterProject2.Infrastructure
         public ViewContext? ViewContext { get; set; }   
         public string? PageAction { get; set; }
         public PaginationInfo PageModel { get; set; }
+        public bool PageClassesEnabled { get; set; } = false;
+        public string PageClass { get; set; } = string.Empty;
+        public string PageClassNormal { get; set; } = string.Empty;
+        public string PageClassSelection { get; set; } = string.Empty;
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (ViewContext != null && PageModel != null)
@@ -32,6 +38,11 @@ namespace TheWaterProject2.Infrastructure
                 {
                     TagBuilder tag = new TagBuilder("a");
                     tag.Attributes["href"] = urlHelper.Action(PageAction, new {pageNum = i});
+                    if (PageClassesEnabled)
+                    {
+                        tag.AddCssClass(PageClass);
+                        tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelection : PageClassNormal);
+                    }
                     tag.InnerHtml.Append(i.ToString());
 
                     result.InnerHtml.AppendHtml(tag);

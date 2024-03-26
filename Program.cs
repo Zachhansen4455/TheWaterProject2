@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TheWaterProject2.Models;
 
@@ -31,7 +32,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "pagination", "Projects/{PageNum}", new {Controller = "Home", action = "Index"}
+    );
+app.MapDefaultControllerRoute();
 
 app.Run();
