@@ -9,8 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="533d6040-6c50-4468-ad05-6d2490e5b433" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/WaterProjectDB.sqlite-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WaterProjectDB.sqlite-wal" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/SessionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/UrlExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheWaterProject2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheWaterProject2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Cart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Cart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Cart.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Cart.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/ProjectSummary.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/ProjectSummary.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2eCpLm7yggZGYKBpB2RcYiKxu9Q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,7 +38,7 @@
     ".NET Launch Settings Profile.TheWaterProject2: http.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Phase2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711418363317</updated>
       <workItem from="1711418366600" duration="10592000" />
+      <workItem from="1711480571144" duration="4803000" />
     </task>
     <servers />
   </component>

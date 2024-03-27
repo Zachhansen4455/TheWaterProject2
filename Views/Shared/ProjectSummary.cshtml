@@ -4,6 +4,7 @@
 @{
 }
 
+@using TheWaterProject2.Infrastructure
 @model Project 
 
 <div class="card m-1 p-1">
@@ -18,8 +19,9 @@
         <li>Installation: @Model.ProjectInstallation</li>
         <li>Phase: @Model.ProjectPhase</li>
     </ul>
-    <form method="post" asp-page="/Cart">
-        <input type="hidden" asp-for="@Model.ProjectId"/>
+    <form id="@Model.ProjectId" method="post" asp-page="/Cart">
+        <input type="hidden" asp-for="@Model.ProjectId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
         <button type="submit" class="btn-outline-success btn-sm float-end">Donate</button>
     </form>
 </div>
